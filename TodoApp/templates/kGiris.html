@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv = "X-UA-Compatible" content ="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    
+    <title>Kullanıcı Girişi</title>
+</head>
+<body> 
+
+    <div style= "margin-Top:150px " class = "container">
+        <h3> Kullanıcı Girişi </h3>
+        <hr>
+
+        <form action ="/deneme" method = "post">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Kullanıcı Adı</label>
+      
+                <input type="text" name = "kname" class="form-control" id="formGroupExampleInput" placeholder="Kullanıcı Adınızı giriniz.." value ="">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Şifre</label>
+            <input type="text" name = "sifre" class="form-control" id="formGroupExampleInput2" placeholder="Şifrenizi giriniz.." value ="">
+        </div>
+            <button type="submit" class="btn btn-danger btn-lg btn-block"> Oluştur </button> </br> </br>
+    </form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Kayıtlı Kişiler</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in todos  %}
+             <tr>
+                <th scope="row" > {{ user.id }}</th>
+                <td> {{ user.kname }}</td>
+             </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+   
+</body>
+</html>
